@@ -4,7 +4,7 @@
 
 On each folder there is a separate project crated with `npx create-next-app@latest` (using page router) and each one with different versions of `@module-federation/nextjs-mf`, with webpack and plugins configured propperly
 
-This repo is to demostrate the error happening after the version `8.1.4` of the `@module-federation/nextjs-mf` dependency
+This repo is to demostrate the error happening after the version `8.1.4` of the `@module-federation/nextjs-mf` dependency, and also from the version `8.1.7` on, which yields a different error message.
 
 ## Steps to run this example
 
@@ -33,4 +33,20 @@ The error on the console is something like:
     at __webpack_require__ ([projectFolder]/.next/server/webpack-api-runtime.js:53:42279)
     at t ([projectFolder]/.next/server/webpack-api-runtime.js:54:2792)
     at [projectFolder]/.next/server/webpack-api-runtime.js:54:2925
+```
+
+After checking more versions of `@module-federation/nextjs-mf`, the error continue to happen, but from version `8.1.7` the error changes to the one below
+
+```
+ ⨯ TypeError: (void 0) is not a function
+    at 6280 ([projectFolder]/.next/server/webpack-api-runtime.js:1:195)
+    at __webpack_require__ ([projectFolder]/.next/server/webpack-api-runtime.js:53:52368)
+    at 7672 ([projectFolder]/.next/server/webpack-api-runtime.js:53:50214)
+    at __webpack_require__ ([projectFolder]/.next/server/webpack-api-runtime.js:53:52368)
+    at t ([projectFolder]/.next/server/webpack-api-runtime.js:54:2792)
+    at [projectFolder]/.next/server/webpack-api-runtime.js:54:2925
+    at [projectFolder]/.next/server/webpack-api-runtime.js:54:2930
+    at Object.<anonymous> ([projectFolder]/.next/server/webpack-api-runtime.js:54:2934)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
 ```
