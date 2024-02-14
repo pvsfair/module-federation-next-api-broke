@@ -5,7 +5,7 @@ module.exports = {
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: "mf-8-1-4",
+        name: "mf-8-1-7",
         filename: "static/chunks/remoteEntry.js",
         exposes: {},
         remotes: {},
